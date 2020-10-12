@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+#search_container {
+    text-align: center;
+    position: flex;
+}
+
+.final_container {
+    text-align: center;
+    position: flex;
+}
