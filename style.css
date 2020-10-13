@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: brown;
+}
+
+h1 {
+    font-size: 1.9rem;
+    
+}
 #search_container {
     text-align: center;
     position: flex;
