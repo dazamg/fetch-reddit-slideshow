@@ -1,19 +1,3 @@
-// const slideShow = () => {
-//     let i = 0
-//     let children = document.getElementById('images').children
-
-//     let timer = setInterval(function(){
-//         // children[i].style.dispay = 'none';
-//         if(i+1 < children.length) {
-//             i++;
-//         } else {
-//             i = 0;
-//         }
-//         children[i].style.dispay = 'inline-block';
-//     },3000);
-// }
-// slideShow()
-
 document.addEventListener("DOMContentLoaded", () => {
     
     document.getElementById('form').addEventListener('submit', (e) => {
@@ -31,14 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
             return responseData.json()
         })
         .then((jsonData) => {
-            let array = [];
-            jsonData.data.children.map(child=>{
-                return array.push(child.data.thumbnail)
-            // let imgArr = jsonData.data.children.map(child=>{
-            //     return child.data.thumbnail
+            // let array = [];
+            // jsonData.data.children.map(child=>{
+            //     return array.push(child.data.thumbnail)
+            let imgArr = jsonData.data.children.map(child=>{
+                return child.data.thumbnail
             })
             
-            array.forEach(addData)
+            imgArr.forEach(addData)
 
             
         })

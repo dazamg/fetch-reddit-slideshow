@@ -3,7 +3,11 @@
 }
 
 body {
-    background-color: brown;
+    /* background-color: brown; */
+    background: url("./examples/mandy-beerley-9GDa7nK_4q0-unsplash.jpg") no-repeat; 
+    background-size: 100%;
+    z-index: 1;
+    font-family: 'Sansita Swashed', cursive;
 }
 
 h1 {
@@ -23,3 +27,13 @@ h1 {
 #images {
     position: flex;
 }
+#stop {
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 5px 15px;
+    color: #ff0000
+}
+#stop:focus {
+    outline: 1;
+  }
