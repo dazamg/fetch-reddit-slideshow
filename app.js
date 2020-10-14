@@ -1,4 +1,19 @@
-let array = [];
+// const slideShow = () => {
+//     let i = 0
+//     let children = document.getElementById('images').children
+
+//     let timer = setInterval(function(){
+//         // children[i].style.dispay = 'none';
+//         if(i+1 < children.length) {
+//             i++;
+//         } else {
+//             i = 0;
+//         }
+//         children[i].style.dispay = 'inline-block';
+//     },3000);
+// }
+// slideShow()
+
 document.addEventListener("DOMContentLoaded", () => {
     
     document.getElementById('form').addEventListener('submit', (e) => {
@@ -15,41 +30,34 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((responseData)=> {
             return responseData.json()
         })
-        // let data
-        // let slideIndex=1
-        
         .then((jsonData) => {
             let array = [];
             jsonData.data.children.map(child=>{
                 return array.push(child.data.thumbnail)
+            // let imgArr = jsonData.data.children.map(child=>{
+            //     return child.data.thumbnail
             })
             
             array.forEach(addData)
+
             
         })
         .catch((err)=>{
             console.log('Something went wrong', err)
         })
     })
-    // var index= 1;
+
     
-    document.getElementById('')
-
     const addData = (thumbnailUrl) => {
-            let pic = document.createElement('img')
-            pic.setAttribute('src', thumbnailUrl)
-            images.appendChild(pic);
-            // if(imageID %2 == 0){
-            //     pic.style.display = 'block';
-            // }
-            // imageID++;
-
-        // return thumbnailUrl(imgArr)      
+        let pic = document.createElement('img')
+        pic.setAttribute('src', thumbnailUrl)
+        images.appendChild(pic);
     }
 
-})
+})  
 
-document.getElementById('stop').addEventListener('click', () => {
+document.getElementById('stop').addEventListener('click', (e) => {
+    e.preventDefault()
     document.querySelector('img')
     while(images.firstChild) {
         images.removeChild(images.firstChild)
@@ -58,27 +66,4 @@ document.getElementById('stop').addEventListener('click', () => {
     document.getElementById('go').style.visibility = 'visible';
     document.getElementById('submit').style.visibility = "visible";
     document.getElementById('go').value=''
-        // pic1.removeAttribute('src')
-    
 })
-
-
-// jsonData.children.forEach((child) => {
-//     array.push(child.data.thumbnail)
-// })  
-
-// let imgArr = jsonData.data.children.map(child=>{
-//     return child.data.thumbnail
-// })
-
-// imgArr.forEach(addData)
-
-
-
-
-
-
-
-
-
-
